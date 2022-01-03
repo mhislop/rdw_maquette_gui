@@ -25,11 +25,11 @@ alsof je een monitor en toetsenbord rechtstreeks aan de Raspberry Pi hebt gekopp
 ## Opstarten interface ##
 Nadat er verbinding is gemaakt met de Raspberry Pi. Dan kan de interface gestart worden op de volgende twee manieren:
 1. Kant-en-klaar: Klik op de gebouwde applicatie genaamd: rdw_maquette_gui.exe
-2. Productie: 
-2.1 Open de terminal
-2.2 Ga naar de map rdw_maquette_gui
-2.3 Activeer de virtual env door in te typen: source env/bin/activate
-2.4 Voer in de terminal om de applicatie te runnen: python build/boot.py
+2. Productie:__ 
+2.1 Open de terminal_
+2.2 Ga naar de map rdw_maquette_gui_
+2.3 Activeer de virtual env door in te typen: source env/bin/activate_
+2.4 Voer in de terminal om de applicatie te runnen: python build/boot.py_
 
 ## Eenmalige setup als SD-kaart geformatteerd is of niet gebruikt kan worden ##
 
