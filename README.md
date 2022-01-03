@@ -1,6 +1,6 @@
 # RDW Maquette GUI
 
-Dit is de repository van de RDW Maquette GUI. In deze repository is de interface te vinden die wordt gebruikt om de stoplichten individueel op afstand te besturen. De micro-sd kaart voor de raspberry pi die meegegeven is tijdens de overdracht is al opgezet en deze kan direct gebruikt worden om de interface te starten. Mocht het zo zijn dat de micro-sd niet te gebruiken is vanwege redenen, dan moet de setup van de raspberry pi eenmalig opnieuw gedaan worden. Zie onder **Eenmalige setup als SD-kaart geformatteerd is of niet gebruikt kan worden**. Als dit niet het geval is en de SD-kaart kan gebruikt geworden. Volg dan de stappen onder *Stappen voor starten van interface*
+Dit is de repository van de RDW Maquette GUI. In deze repository is de interface te vinden die wordt gebruikt om de stoplichten individueel op afstand te besturen. De Micro-SD kaart voor de raspberry pi die meegegeven is tijdens de overdracht is al opgezet en deze kan direct gebruikt worden om de interface te starten. Mocht het zo zijn dat de Micro-SD niet te gebruiken is vanwege redenen, dan moet de setup van de Raspberry Pi eenmalig opnieuw gedaan worden. Zie onder **Eenmalige setup als SD-kaart geformatteerd is of niet gebruikt kan worden** voor alle stappen die doorlopen moeten worden. Als dit niet het geval is en de SD-kaart kan gewoon gebruikt geworden. Volg dan de stappen onder **Stappen voor starten van interface**
 
 ## Stappen voor starten van interface ##
 Als eerst moet er verbinding gemaakt worden met de raspberry pi en de laptop. Dit wordt gedaan door middel van SSH + VNC Server. 
@@ -10,25 +10,26 @@ Als eerst moet er verbinding gemaakt worden met de raspberry pi en de laptop. Di
 2. Sluit de Raspberry Pi aan.
 3. Gebruik een UTP kabel en verbind deze met de Raspberry Pi en jouw laptop.
 4. Installeer PuTTY (windows) of open Terminal (Mac) en voer de volgende stap uit.
-   - PuTTY: stel in op **ssh** en host **raspberry.local**
-   - Terminal: ssh pi@raspberry.local
+   - PuTTY: stel in op *ssh* en host *raspberry.local*
+   - Terminal: *ssh pi@raspberry.local*
 5. Je ziet de password-prompt van de Raspberry PI. Tik in 
-raspberry (default wachtwoord) en je hebt een ssh verbinding gelegd met de Raspberry PI (terminal mode)
+*raspberry* (default wachtwoord) en je hebt een ssh verbinding gelegd met de Raspberry PI in de terminal
 5. Download en installeer [VNC server](https://www.realvnc.com/en/connect/download/vnc/)
-6. Type in de terminal waar je SSH-verbinding hebt gemaakt: vncserver
+6. Type in de terminal waar je SSH-verbinding hebt gemaakt: *vncserver*
 7. Noteer laatste regel dat de vorm heeft van raspberrypi:1 (ip-addres:1)
 8. Open het programma VNC Viewer en tik in het hostnaam-adres dat je 
-genoteerd hebt: raspberrypi.local:1 (let op: woord .local is toegevoegd)
+genoteerd hebt: *raspberrypi.local:1* (let op: woord .local is toegevoegd)
 9. Je ziet de Raspberry PI Desktop GUI op jouw laptop. Je kan nu via de grafische GUI werken 
 alsof je een monitor en toetsenbord rechtstreeks aan de Raspberry Pi hebt gekoppeld.
 
+## Opstarten interface ##
 Nadat er verbinding is gemaakt met de Raspberry Pi. Dan kan de interface gestart worden op de volgende twee manieren:
 1. Kant-en-klaar: Klik op de gebouwde applicatie genaamd: rdw_maquette_gui.exe
 2. Productie: 
-- 2.1 Open de terminal
-- 2.2 Ga naar de map rdw_maquette_gui
-- 2.3 Activeer de virtual env door in te typen: source env/bin/activate
-- 2.4 Voer in de terminal om de applicatie te runnen: python build/boot.py
+2.1 Open de terminal
+2.2 Ga naar de map rdw_maquette_gui
+2.3 Activeer de virtual env door in te typen: source env/bin/activate
+2.4 Voer in de terminal om de applicatie te runnen: python build/boot.py
 
 ## Eenmalige setup als SD-kaart geformatteerd is of niet gebruikt kan worden ##
 
