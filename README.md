@@ -1,1 +1,1 @@
-# rdw_maquette_gui
+# RDQ maquette GUI
