@@ -40,3 +40,10 @@ genoteerd hebt: raspberrypi.local:1 (let op: woord .local is toegevoegd)
 9. Je ziet de Raspberry PI Desktop GUI op jouw laptop. Je kan nu via de grafische GUI werken 
 alsof je een monitor en toetsenbord rechtstreeks aan de Raspberry Pi hebt gekoppeld.
 
+## Setup repository raspberry pi
+Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een virtual enviroment.
+1.  Maak een nieuwe virtuele enviromenent met: *python3 -m venv /path/to/new/virtual/environment*
+2.  Clone deze repository in de net aangemaakte folder
+3.  Activeer de virtuale enviroment met: *source env/bin/activate*
+4.  Download alle benodigde modules met: *python3 -m pip install -r /requirements.txt*
+
