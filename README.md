@@ -10,7 +10,7 @@ Benodigheden:
 
 Stappen:
 1. Mount de Micro-SD m.b.v. de adapter met je laptop
-2. Maak met programma **Raspberry PI Imager** een boot SD-card
+2. Maak met programma **Raspberry PI Imager** een boot SD-card \n
    Link:: https://www.raspberrypi.org/downloads/
    Versie: Raspberry PI OS Desktop (32-bit) (recommended)
 3. 
