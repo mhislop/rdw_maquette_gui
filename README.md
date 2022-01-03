@@ -22,23 +22,18 @@ genoteerd hebt: *raspberrypi.local:1* (let op: woord .local is toegevoegd)
 9. Je ziet de Raspberry PI Desktop GUI op jouw laptop. Je kan nu via de grafische GUI werken 
 alsof je een monitor en toetsenbord rechtstreeks aan de Raspberry Pi hebt gekoppeld.
 
-## Opstarten interface ##
+### Opstarten interface ###
 Nadat er verbinding is gemaakt met de Raspberry Pi. Dan kan de interface gestart worden op de volgende twee manieren:
 1. Kant-en-klaar: Klik op de gebouwde applicatie genaamd: *rdw_maquette_gui.exe*
 2. Productie: <br /> 
 2.1 Open de terminal <br />
-2.2 Ga naar de map *rdw_maquette_gui* <br />
+2.2 Ga naar de map rdw_maquette_gui <br />
 2.3 Activeer de virtual env door in te typen: *source env/bin/activate* <br />
 2.4 Voer in de terminal om de applicatie te runnen: *python build/boot.py* <br />
 
 ## Eenmalige setup als SD-kaart geformatteerd is of niet gebruikt kan worden ##
 
 ### Setup Micro-sd kaart (Eenmalig als SD-kaart geformatteerd is)
-Benodigheden:
-- Raspberry Pi 4 Model B
-- Raspberry Pi voeding
-- Micro-SD kaart met adapter
-
 Stappen:
 1. Mount de Micro-SD m.b.v. de adapter met je laptop
 2. Maak met programma **Raspberry PI Imager** een boot SD-card
