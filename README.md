@@ -57,5 +57,5 @@ Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een 
 1.  Maak een nieuwe virtuele enviromenent met: *python3 -m venv /path/to/new/virtual/environment*
 2.  Clone deze repository in de net aangemaakte folder
 3.  Activeer de virtuale enviroment met: *source bin/activate*
-4.  Download alle benodigde modules met: *python3 -m pip install -r /requirements.txt*
+4.  Download alle benodigde modules met: *python3 -m pip install -r rdw_maquette_gui/requirements.txt*
 5.  Start de repository op met: *python rdw_maquette_gui/boot.py*
