@@ -19,10 +19,10 @@ Stappen:
 6. Eject de SD kaart
 7. Om nu verbinding te maken met de raspberry pi, dien je de stappen onder het kopje **Verbinden met Raspberry Pi via SSH + VNC server** te volgen.
 8. Nadat je verbinding hebt gemaakt de raspberry pi is het nog belangrijk om de volgende configuraties te doen voor de raspberry pi. Deze hoeven maar eenmalig gedaan te worden:
-   8.1 Ga naar Pi menu >> Preferences >> Raspberry Pi Configuration
-   8.2 Verander wachtwoord van de pi
-   8.3 Verander hostname van de pi
-   8.4 Interfaces >> enable VNC, SPI, I2C 
+   - 8.1 Ga naar Pi menu >> Preferences >> Raspberry Pi Configuration
+   - 8.2 Verander wachtwoord van de pi
+   - 8.3 Verander hostname van de pi
+   - 8.4 Interfaces >> enable VNC, SPI, I2C 
 
 ## Verbinden met Raspberry Pi via SSH + VNC server
 1. Plaatst de SD-kaart in de Raspberry Pi 
