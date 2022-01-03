@@ -5,7 +5,12 @@ Dit is de repository van de RDW Maquette GUI. In deze repository is de interface
 ## Setup Micro-sd kaart
 Benodigheden:
 - Raspberry Pi 4 Model B
-- Micro-SD kaart
+- Micro-SD kaart met adapter
 - UTP Kabel (aanrader) of telefoon met mobiel network 
 
-1. 
+Stappen:
+1. Mount de Micro-SD m.b.v. de adapter met je laptop
+2. Maak met programma **Raspberry PI Imager** een boot SD-card
+   Link:: https://www.raspberrypi.org/downloads/
+   Versie: Raspberry PI OS Desktop (32-bit) (recommended)
+3. 
