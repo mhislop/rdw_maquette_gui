@@ -40,20 +40,22 @@ Stappen:
    - Link: https://www.raspberrypi.org/downloads/
    - Versie: Raspberry PI OS Desktop (32-bit) (recommended)
 3. Plaats een lege file op de SD-card met de naam ssh
-4. Plaats de template file **wpa_supplicant.conf** die te vinden is in de map **setup** op de SD-card
-5. Wijzig in file wpa_supplicant.conf de **SSID** en **PSK** waarden met de gegevens van jouw thuis-Wifi, bewaar de nieuwe gegevens.
+4. Plaats de template file *wpa_supplicant.conf* die te vinden is in de map **setup** op de SD-card
+5. Wijzig in file *wpa_supplicant.conf* de **SSID** en **PSK** waarden met de gegevens van jouw thuis-Wifi, bewaar de nieuwe gegevens.
 6. Eject de SD kaart
 7. Om nu verbinding te maken met de raspberry pi, dien je de stappen onder het kopje **Verbinden met Raspberry Pi via SSH + VNC server** te volgen.
 8. Nadat je verbinding hebt gemaakt de raspberry pi is het nog belangrijk om de volgende configuraties te doen voor de raspberry pi. Deze hoeven maar eenmalig gedaan te worden:
-   - 8.1 Ga naar Pi menu >> Preferences >> Raspberry Pi Configuration
-   - 8.2 Verander wachtwoord van de pi
-   - 8.3 Verander hostname van de pi
-   - 8.4 Interfaces >> enable VNC, SPI, I2C 
+   8.1 Ga naar Pi menu >> Preferences >> Raspberry Pi Configuration <br />
+   8.2 Verander wachtwoord van de pi <br />
+   8.3 Verander hostname van de pi <br />
+   8.4 Interfaces >> enable VNC, SPI, I2C  <br />
 
-## Eenmalige setup repository raspberry pi
+Nadat de setup van de Micro-SD kaart is gedaan, kan de repository gecloned worden. 
+
+### Setup repository raspberry pi ###
 Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een virtual enviroment.
 1.  Maak een nieuwe virtuele enviromenent met: *python3 -m venv /path/to/new/virtual/environment*
 2.  Clone deze repository in de net aangemaakte folder
 3.  Activeer de virtuale enviroment met: *source env/bin/activate*
 4.  Download alle benodigde modules met: *python3 -m pip install -r /requirements.txt*
-
+5.  Start de repository op met: *python rdw_maquette_gui/boot.py*
