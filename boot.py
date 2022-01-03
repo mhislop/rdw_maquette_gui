@@ -3,7 +3,7 @@ from classes.TrafficLightSet import TrafficLightSet
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 import time
 import board
 import busio
@@ -42,7 +42,6 @@ canvas_bg = Canvas(root, width=700, height=700)
 canvas_bg.pack(fill = "both", expand = False)
 canvas_bg.create_image(0, 0, image=bg_image, anchor="nw")
 
-# Button click event
 traffic_light_sets = TrafficLightSetSeeder()
 
 # Setup GPIO pins for output
@@ -56,7 +55,7 @@ def setup_pins():
             GPIO.setup(set.green_GPIO, GPIO.OUT)
             GPIO.setup(set.yellow_GPIO, GPIO.OUT)
             GPIO.setup(set.red_GPIO, GPIO.OUT)
-            # Turn green on all traffic lights
+            # Activate green on all traffic lights
             GPIO.output(set.green_GPIO, GPIO.LOW)
             GPIO.output(set.yellow_GPIO, GPIO.LOW)
             GPIO.output(set.red_GPIO, GPIO.HIGH)
@@ -64,11 +63,12 @@ def setup_pins():
             mcp.get_pin(set.green_GPIO).direction = Direction.OUTPUT
             mcp.get_pin(set.yellow_GPIO,).direction = Direction.OUTPUT
             mcp.get_pin(set.red_GPIO).direction = Direction.OUTPUT
-            # Turn green on all traffic lights
-            mcp.get_pin(set.green_GPIO).value = True
+            # Activate green on all traffic lights
+            mcp.get_pin(set.green_GPIO).value = False
             mcp.get_pin(set.yellow_GPIO).value = False
-            mcp.get_pin(set.red_GPIO).value = False
+            mcp.get_pin(set.red_GPIO).value = True
 
+# Button click event
 def toggle_traffic_light(set_number, delete_button):
     delete_button()
     
@@ -89,6 +89,8 @@ def toggle_traffic_light(set_number, delete_button):
                 else:
                     mcp.get_pin(set.yellow_GPIO).value = True
                 time.sleep(2)
+
+                # Create new traffic light button to update UI
                 traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/yellow_light.png")
                 traffic_light_button = Button(root)
                 traffic_light_button.config(image=set.active_image)
@@ -101,12 +103,14 @@ def toggle_traffic_light(set_number, delete_button):
                 else:
                     mcp.get_pin(set.yellow_GPIO).value = False
 
-                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/red_light.png")
                 if set.uses_mcp is False:
                     GPIO.output(set.red_GPIO, GPIO.HIGH)
                 else:
                     mcp.get_pin(set.red_GPIO).value = True
                 set.is_green_active = False
+
+                # Update UI 
+                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/red_light.png")
                 pack_button(set)
 
                 print("Verkeerslichtset {} staat op rood".format(set_number))
@@ -122,20 +126,21 @@ def toggle_traffic_light(set_number, delete_button):
                 else:
                     mcp.get_pin(set.green_GPIO).value = True
 
+                # Update UI
                 traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/green_light.png")
                 set.is_green_active = True
                 pack_button(set)
 
                 print("Verkeerslichtset {} staat op groen".format(set_number))
 
+# Create traffic light button
 def pack_button(set):
-    print("set of clicked: {}".format(set.set_number))
     traffic_light_button = Button(root, command=lambda:toggle_traffic_light(set.set_number, traffic_light_button.pack_forget))
     traffic_light_button.config(image=set.active_image)
     traffic_light_button.pack()
     canvas_bg.create_window(set.coordinates[0], set.coordinates[1], anchor="nw", window=traffic_light_button) 
 
-# Setup buttons on canvas
+# Setup traffic light buttons on canvas
 def setup_buttons():
     for x in range(8):
         set = traffic_light_sets[x]
