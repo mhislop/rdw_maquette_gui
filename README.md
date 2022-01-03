@@ -39,7 +39,7 @@ Stappen:
 2. Maak met programma **Raspberry PI Imager** een boot SD-card
    - Link: https://www.raspberrypi.org/downloads/
    - Versie: Raspberry PI OS Desktop (32-bit) (recommended)
-3. Plaats een lege file op de SD-card met de naam ssh
+3. Plaats een lege file op de SD-card met de naam *ssh*
 4. Plaats de template file *wpa_supplicant.conf* die te vinden is in de map **setup** op de SD-card
 5. Wijzig in file *wpa_supplicant.conf* de **SSID** en **PSK** waarden met de gegevens van jouw thuis-Wifi, bewaar de nieuwe gegevens.
 6. Eject de SD kaart
