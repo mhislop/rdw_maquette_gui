@@ -56,7 +56,11 @@ Nadat de setup van de Micro-SD kaart is gedaan, kan de repository gecloned worde
 ### Setup repository raspberry pi ###
 Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een virtual enviroment.
 1. Clone deze repository in de net aangemaakte folder
-2. Download de benodigde modules met pip:
-   2.1 
-   2.2
-   2.3 
+2. Open een terminal om de benodigde modules te downloaden
+3. Download de benodigde modules met pip: <br />
+   3.1 Tkinter (voer uit in de terminal: pip install tk) <br />
+   3.2 Pillow (voer uit in de terminal: pip install Pillow) <br />
+   3.3 Adafruit-Blinka (voer uit in de terminal: pip install Adafruit-Blinka) <br />
+   3.4 Adafruit_mcp230xx (voer uit in de terminal: pip install adafruit-circuitpython-mcp230xx) <br />
+   3.5 luma.core (voer uit in de terminal: pip install luma.core) <br />
+   3.6 luma.oled (voer uit in de terminal: pip install luma.oled) <br />
