@@ -55,9 +55,10 @@ Nadat de setup van de Micro-SD kaart is gedaan, kan de repository gecloned worde
 
 ### Setup repository raspberry pi ###
 Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een virtual enviroment.
-1. Clone deze repository in de net aangemaakte folder
-2. Open een terminal om de benodigde modules te downloaden
-3. Download de benodigde modules met pip: <br />
+1. Open een terminal
+2. Type in de terminal om naar het bureaublad te gaan: cd Desktop
+3. Clone deze repository naar het bureaublad door in de terminal te typen: git clone https://github.com/mhislop/rdw_maquette_gui
+4. Download de benodigde modules met pip: <br />
    3.1 Tkinter (voer uit in de terminal: pip install tk) <br />
    3.2 Pillow (voer uit in de terminal: pip install Pillow) <br />
    3.3 Adafruit-Blinka (voer uit in de terminal: pip install Adafruit-Blinka) <br />
