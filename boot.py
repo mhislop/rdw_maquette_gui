@@ -3,12 +3,15 @@ from classes.TrafficLightSet import TrafficLightSet
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-# import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import board
 import busio
 from digitalio import Direction
 from adafruit_mcp230xx.mcp23017 import MCP23017
+import threading
+import boot 
+import matrix.boot
 
 # MCP config
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -34,7 +37,7 @@ def center_screen():
 center_screen()
 
 # Set background
-bg_image = Image.open("/home/pi/Desktop/maquette_gui/images/Kruispunt.png")
+bg_image = Image.open("/home/pi/Desktop/rdw_maquette_gui/images/Kruispunt.png")
 bg_image = bg_image.resize((700, 700))
 bg_image = ImageTk.PhotoImage(bg_image)
 
@@ -69,11 +72,9 @@ def setup_pins():
             mcp.get_pin(set.red_GPIO).value = True
 
 # Button click event
-def toggle_traffic_light(set_number, delete_button):
-    delete_button()
-    
+def toggle_traffic_light(set_number):
     for set in traffic_light_sets:
-        if set.set_number is set_number:    
+        if set.set_number == set_number:
             if set.is_green_active:
                 # Switch traffic light to red #
 
@@ -91,7 +92,7 @@ def toggle_traffic_light(set_number, delete_button):
                 time.sleep(2)
 
                 # Create new traffic light button to update UI
-                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/yellow_light.png")
+                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/rdw_maquette_gui/images/yellow_light.png")
                 traffic_light_button = Button(root)
                 traffic_light_button.config(image=set.active_image)
                 traffic_light_button.pack()
@@ -110,7 +111,7 @@ def toggle_traffic_light(set_number, delete_button):
                 set.is_green_active = False
 
                 # Update UI 
-                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/red_light.png")
+                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/rdw_maquette_gui/images/red_light.png")
                 pack_button(set)
 
                 print("Verkeerslichtset {} staat op rood".format(set_number))
@@ -122,20 +123,30 @@ def toggle_traffic_light(set_number, delete_button):
                     mcp.get_pin(set.red_GPIO).value = False
 
                 if set.uses_mcp is False:
+                    print("groen gaat aan")
+                    print(set.green_GPIO)
                     GPIO.output(set.green_GPIO, GPIO.HIGH)
                 else:
                     mcp.get_pin(set.green_GPIO).value = True
 
                 # Update UI
-                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/maquette_gui/images/green_light.png")
+                traffic_light_sets[set_number].active_image = PhotoImage(file="/home/pi/Desktop/rdw_maquette_gui/images/green_light.png")
                 set.is_green_active = True
                 pack_button(set)
 
                 print("Verkeerslichtset {} staat op groen".format(set_number))
 
+# Runs when traffic light is clicked
+def traffic_light_click(linked_to):
+    t1 = threading.Thread(target=toggle_traffic_light, args=[linked_to[0]])
+    t2 = threading.Thread(target=toggle_traffic_light, args=[linked_to[1]])
+    t1.start()
+    t2.start()
+
+
 # Create traffic light button
 def pack_button(set):
-    traffic_light_button = Button(root, command=lambda:toggle_traffic_light(set.set_number, traffic_light_button.pack_forget))
+    traffic_light_button = Button(root, command=lambda:traffic_light_click(set.linked_to))
     traffic_light_button.config(image=set.active_image)
     traffic_light_button.pack()
     canvas_bg.create_window(set.coordinates[0], set.coordinates[1], anchor="nw", window=traffic_light_button) 
@@ -147,6 +158,8 @@ def setup_buttons():
         pack_button(set)
         
 # Initialize
+matrix.boot.start()
 setup_pins()
 setup_buttons()
 root.mainloop()
+

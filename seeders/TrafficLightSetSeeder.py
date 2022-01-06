@@ -9,7 +9,8 @@ def TrafficLightSetSeeder():
             1,
             2,
             [140, 500],
-            True
+            True,
+            [0, 4]
         )
     )
     traffic_light_sets.append(
@@ -19,7 +20,8 @@ def TrafficLightSetSeeder():
             4,
             5,
             [275, 500],
-            True
+            True,
+            [1,5]
         )
     )
     traffic_light_sets.append(
@@ -27,29 +29,32 @@ def TrafficLightSetSeeder():
             2,
             6,
             7,
-            8,
+            15,
             [520, 500],
-            True
+            True,
+            [2,6]
         )
     )
     traffic_light_sets.append(
         TrafficLightSet(
             3,
-            9,
-            10,
-            11,
+            14,
+            13,
+            12,
             [520, 370],
-            True
+            True,
+            [3,7]
         )
     )
     traffic_light_sets.append(
         TrafficLightSet(
             4,
-            12,
-            13,
-            14,
+            11,
+            10,
+            9,
             [520, 110],
-            True
+            True,
+            [0,4]
         )
     )
     traffic_light_sets.append(
@@ -59,17 +64,19 @@ def TrafficLightSetSeeder():
             27,
             22,
             [390, 110],
-            False
+            False,
+            [1,5]
         )
     )
     traffic_light_sets.append(
         TrafficLightSet(
             6,
-            5,
-            6,
             13,
+            6,
+            5,
             [140, 110],
-            False
+            False,
+            [2,6]
         )
     )
     traffic_light_sets.append(
@@ -79,7 +86,8 @@ def TrafficLightSetSeeder():
             26,
             18,
             [140, 240],
-            False
+            False,
+            [3,7]
         )
     )
 
