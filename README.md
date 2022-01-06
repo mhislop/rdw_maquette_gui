@@ -28,7 +28,7 @@ Nadat er verbinding is gemaakt met de Raspberry Pi. Dan kan de interface gestart
 2. Productie: <br /> 
 2.1 Open de terminal <br />
 2.2 Ga naar de map rdw_maquette_gui <br />
-2.3 Activeer de virtual env door in te typen: *source env/bin/activate* <br />
+2.3 Activeer de virtual env door in te typen: *source bin/activate* <br />
 2.4 Voer in de terminal om de applicatie te runnen: *python build/boot.py* <br />
 
 ## Eenmalige setup als SD-kaart geformatteerd is of niet gebruikt kan worden ##
@@ -56,6 +56,6 @@ Nadat de setup van de Micro-SD kaart is gedaan, kan de repository gecloned worde
 Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een virtual enviroment.
 1.  Maak een nieuwe virtuele enviromenent met: *python3 -m venv /path/to/new/virtual/environment*
 2.  Clone deze repository in de net aangemaakte folder
-3.  Activeer de virtuale enviroment met: *source env/bin/activate*
-4.  Download alle benodigde modules met: *python3 -m pip install -r /requirements.txt*
+3.  Activeer de virtuale enviroment met: *source bin/activate*
+4.  Download alle benodigde modules met: *python3 -m pip install -r rdw_maquette_gui/requirements.txt*
 5.  Start de repository op met: *python rdw_maquette_gui/boot.py*
