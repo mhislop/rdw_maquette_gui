@@ -45,7 +45,7 @@ Stappen:
 5. Wijzig in file *wpa_supplicant.conf* de **SSID** en **PSK** waarden met de gegevens van jouw Wifi, bewaar de nieuwe gegevens.
 6. Eject de SD kaart
 7. Om nu verbinding te maken met de raspberry pi, dien je de stappen onder het kopje **Verbinden met Raspberry Pi via SSH + VNC server** te volgen.
-8. Nadat je verbinding hebt gemaakt de raspberry pi is het nog belangrijk om de volgende configuraties te doen voor de raspberry pi. Deze hoeven maar eenmalig gedaan te worden:
+8. Nadat je verbinding hebt gemaakt de raspberry pi is het nog belangrijk om de volgende configuraties te doen voor de raspberry pi. Deze hoeven maar eenmalig gedaan te worden: <br />
    8.1 Ga naar Pi menu >> Preferences >> Raspberry Pi Configuration <br />
    8.2 Verander wachtwoord van de pi <br />
    8.3 Verander hostname van de pi <br />
@@ -59,9 +59,9 @@ Voor het installeren van de benodigde modules wordt er gebruikt gemaakt van een 
 2. Type in de terminal om naar het bureaublad te gaan: cd Desktop
 3. Clone deze repository naar het bureaublad door in de terminal te typen: git clone https://github.com/mhislop/rdw_maquette_gui
 4. Download de benodigde modules met pip: <br />
-   3.1 Tkinter (voer uit in de terminal: pip install tk) <br />
-   3.2 Pillow (voer uit in de terminal: pip install Pillow) <br />
-   3.3 Adafruit-Blinka (voer uit in de terminal: pip install Adafruit-Blinka) <br />
-   3.4 Adafruit_mcp230xx (voer uit in de terminal: pip install adafruit-circuitpython-mcp230xx) <br />
-   3.5 luma.core (voer uit in de terminal: pip install luma.core) <br />
-   3.6 luma.oled (voer uit in de terminal: pip install luma.oled) <br />
+   4.1 Tkinter (voer uit in de terminal: pip install tk) 
+   4.2 Pillow (voer uit in de terminal: pip install Pillow) <br />
+   4.3 Adafruit-Blinka (voer uit in de terminal: pip install Adafruit-Blinka) <br />
+   4.4 Adafruit_mcp230xx (voer uit in de terminal: pip install adafruit-circuitpython-mcp230xx) <br />
+   4.5 luma.core (voer uit in de terminal: pip install luma.core) <br />
+   4.6 luma.oled (voer uit in de terminal: pip install luma.oled) <br />
