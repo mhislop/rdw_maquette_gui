@@ -6,7 +6,7 @@ from gpiozero import DistanceSensor
 import threading
 
 devicedistance = 0.205
-device2distance = 0.21
+devicedistance2 = 0.21
 
 start_time_1 = 0
 end_time_1 = 0
